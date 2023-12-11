@@ -2,7 +2,7 @@
 /*
 Plugin Name: BB Roadmaps Shortcodes  Plugin
 Description: A plugin to display the BuddyBoss 'Roadmap' and 'Milestone'  profile field.
-Version: 1.0
+Version: 1.1.0
 Author: Gourav Shah
 */
 
@@ -28,12 +28,12 @@ function get_bb_milestone_value() {
 
 function bb_roadmap_shortcode_handler($atts) {
     $roadmap_value = get_bb_roadmap_value();
-    return 'Roadmap Value: ' . esc_html($roadmap_value);
+    return esc_html($roadmap_value);
 }
 
 function bb_milestone_shortcode_handler($atts) {
     $milestone_value = get_bb_milestone_value();
-    return 'Milestone Value: ' . esc_html($milestone_value);
+    return esc_html($milestone_value);
 }
 
 add_shortcode('bb_roadmap', 'bb_roadmap_shortcode_handler');
